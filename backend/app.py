@@ -6929,7 +6929,7 @@ def _invalidar_cache_vitrine():
         # Limpar todas as variações com query_string
         # SimpleCache suporta clear() mas não pattern delete;
         # forçar limpeza completa é seguro com SimpleCache
-        from flask_caching import Cache as _CacheRef  # noqa: F811
+        from flask_caching import Cache as _CacheRef  # noqa: F401
         backend = cache.cache
         # SimpleCache armazena em dict _cache; remover chaves com prefixo
         if hasattr(backend, '_cache'):
